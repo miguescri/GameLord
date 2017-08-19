@@ -2,4 +2,4 @@
 
 Page under construction. Refer to the GitHub repo.
 
-[Code documentation](docs/html/index.html)
+[Code documentation](html/index.html)
