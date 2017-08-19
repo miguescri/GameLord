@@ -9,10 +9,10 @@ CORE		:= source/core
 all: test_board test_defboard
 
 test_board: ${BIN}/test_board.o
-	${CPP} -o ${BIN}/test_board ${BIN}/main.o
+	${CPP} -o ${BIN}/test_board ${BIN}/test_board.o ${CPPFLAG}
 
 test_defboard: ${BIN}/test_defboard.o
-	${CPP} -o ${BIN}/test_defboard ${BIN}/main.o
+	${CPP} -o ${BIN}/test_defboard ${BIN}/test_defboard.o ${CPPFLAG}
 
 
 ${BIN}/test_board.o: ${MAIN}/test_board.cpp ${CORE}/board.h ${CORE}/boardexception.h
@@ -26,3 +26,7 @@ DefBoard: ${CORE}/defboard.h ${CORE}/board.h ${CORE}/boardexception.h
 .PHONY:docs
 docs:
 	doxygen
+
+.PHONY:clean
+clean:
+	rm ${BIN}/*
