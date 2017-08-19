@@ -2,14 +2,15 @@
 #define BOARD_H
 
 #include <array>       // std::array
-#include <exception>   // std::exception
 #include <functional>  // std::ref
-#include <list>        // std::list
-#include <map>         // std::map
-#include <memory>      // std::shared_ptr
+#include <list>        // std::list, std::list::front, std::list::push_back,
+                       // std::list:remove, std::list::size
+#include <map>         // std::map, std::map::find, std::map::insert,
+                       // std::map::erase, std::map::end
+#include <memory>      // std::shared_ptr, std::make_shared
 #include <string>      // std::string
-#include <tuple>       // std::tuple
-#include <type_traits> // std::is_base_of std::is_same
+#include <tuple>       // std::tuple, std::make_tuple, std::get
+#include <type_traits> // std::is_base_of, std::is_same
 
 #include "boardexception.h"
 
