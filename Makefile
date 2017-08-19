@@ -9,9 +9,11 @@ CORE		:= source/core
 all: ${BIN}/main.o
 	${CPP} -o ${BIN}/test ${BIN}/main.o
 
-${BIN}/main.o: ${MAIN}/test_main.cpp ${CORE}/board.h
-	${CPP} -o bin/main.o -c ${MAIN}/test_main.cpp ${CPPFLAG}
+test_board: ${BIN}/test_board.o
+	${CPP} -o ${BIN}/test_board ${BIN}/main.o
 
+${BIN}/test_board.o: ${MAIN}/test_board.cpp ${CORE}/board.h ${CORE}/boardexception.h
+	${CPP} -o bin/test_board.o -c ${MAIN}/test_board.cpp ${CPPFLAG}
 .PHONY:docs
 docs:
 	doxygen
